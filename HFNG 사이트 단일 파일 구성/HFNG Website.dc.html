@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#111111"/><text x="200" y="168" font-family="Archivo, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="8" fill="#F5F4F0" text-anchor="middle">HFNG</text></svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin:0; padding:0; background:#F5F4F0; }
+  body { -webkit-font-smoothing: antialiased; }
+  a { color:#111111; text-decoration:none; }
+  a:hover { color:#666666; }
+  ::selection { background:#111; color:#F5F4F0; }
+</style>
+</helmet>
+<div style="background:#F5F4F0; color:#111111; font-family:Archivo, 'Noto Sans KR', sans-serif; min-height:100vh; overflow-x:hidden;">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(245,244,240,0.92); backdrop-filter:blur(12px); border-bottom:1px solid rgba(17,17,17,0.08);">
+    <div style="max-width:1560px; margin:0 auto; padding:0 clamp(20px,4vw,64px); height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="#home" onClick="{{ goHome }}" style="font-weight:700; font-size:22px; letter-spacing:0.18em;">HFNG</a>
+      <nav style="display:flex; align-items:center; gap:clamp(20px,3vw,44px);">
+        <div style="display:none;" data-desktop-nav="1">
+          <div style="display:flex; gap:clamp(20px,3vw,44px);">
+            <a href="#about" onClick="{{ goAbout }}" style="font-size:12px; letter-spacing:0.16em; font-weight:500;">ABOUT</a>
+            <a href="#brands" onClick="{{ goBrands }}" style="font-size:12px; letter-spacing:0.16em; font-weight:500;">BRANDS</a>
+            <a href="#business" onClick="{{ goBusiness }}" style="font-size:12px; letter-spacing:0.16em; font-weight:500;">BUSINESS</a>
+            <a href="#contact" onClick="{{ goContact }}" style="font-size:12px; letter-spacing:0.16em; font-weight:500;">CONTACT</a>
+          </div>
+        </div>
+        <button onClick="{{ toggleMenu }}" data-mobile-toggle="1" style="display:none; background:none; border:none; padding:8px; cursor:pointer; flex-direction:column; gap:5px; align-items:flex-end;">
+          <span style="display:block; width:22px; height:1.5px; background:#111;"></span>
+          <span style="display:block; width:14px; height:1.5px; background:#111;"></span>
+        </button>
+      </nav>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid rgba(17,17,17,0.08); padding:24px clamp(20px,4vw,64px) 36px; display:flex; flex-direction:column; gap:18px; background:#F5F4F0;">
+        <a href="#about" onClick="{{ goAbout }}" style="font-size:24px; font-weight:600; letter-spacing:0.04em;">ABOUT</a>
+        <a href="#brands" onClick="{{ goBrands }}" style="font-size:24px; font-weight:600; letter-spacing:0.04em;">BRANDS</a>
+        <a href="#business" onClick="{{ goBusiness }}" style="font-size:24px; font-weight:600; letter-spacing:0.04em;">BUSINESS</a>
+        <a href="#contact" onClick="{{ goContact }}" style="font-size:24px; font-weight:600; letter-spacing:0.04em;">CONTACT</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section style="height:calc(100vh - 72px); min-height:560px; display:flex; flex-direction:column; justify-content:space-between; padding:clamp(28px,5vh,64px) clamp(20px,4vw,64px) clamp(24px,4vh,48px);">
+      <div style="display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; font-size:11px; letter-spacing:0.28em; color:#666666; font-weight:500;">
+        <span>CONSUMER BRAND COMPANY</span>
+        <span>SEOUL, KOREA</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:clamp(18px,3.4vh,44px);">
+        <span style="font-size:clamp(44px,10vw,180px); line-height:0.82; letter-spacing:0.02em; font-weight:700;">HFNG</span>
+        <h1 style="margin:0; font-size:clamp(34px,7.6vw,140px); line-height:0.9; letter-spacing:-0.04em; font-weight:600;">BUILDING BRANDS<br />FOR BETTER LIVING.</h1>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:28px; border-top:1px solid rgba(17,17,17,0.14); padding-top:clamp(18px,2.6vh,30px);">
+        <p style="margin:0; max-width:400px; font-family:'Noto Sans KR',sans-serif; font-size:15px; line-height:1.8; color:#666666; font-weight:300;">HFNG는 더 나은 일상을 위한 제품과 브랜드를 만듭니다.</p>
+        <a href="#brands" onClick="{{ goBrands }}" style="display:inline-flex; align-items:center; gap:14px; border-bottom:1px solid #111; padding-bottom:10px; font-size:12px; letter-spacing:0.18em; font-weight:600;">EXPLORE OUR BRANDS <span style="font-size:16px;">↓</span></a>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(80px,18vh,220px) clamp(20px,4vw,64px) clamp(64px,12vh,150px);">
+      <div style="max-width:1560px; margin:0 auto;">
+        <div data-reveal="1" style="font-size:11px; letter-spacing:0.28em; color:#666666; margin-bottom:clamp(40px,7vh,84px);">ABOUT HFNG</div>
+        <h2 data-reveal="1" style="margin:0 0 clamp(48px,9vh,120px); font-size:clamp(34px,6.2vw,110px); line-height:0.98; letter-spacing:-0.035em; font-weight:600;">WE BUILD<br />WHAT PEOPLE<br />WILL NEED NEXT.</h2>
+        <div data-reveal="1" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:clamp(36px,6vw,120px); max-width:1200px; margin-left:auto;">
+          <p style="margin:0; font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:clamp(16px,1.35vw,19px); line-height:1.95; color:#111111;">HFNG는 소비자의 변화와 시장의 가능성을 발견하고, 제품 기획부터 브랜드 개발, 제조, 마케팅, 유통까지 하나의 브랜드가 성장하는 전 과정을 설계합니다.</p>
+          <p style="margin:0; font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:clamp(16px,1.35vw,19px); line-height:1.95; color:#666666;">우리는 단순히 제품을 판매하는 것이 아니라 오랫동안 선택받을 수 있는 브랜드를 만드는 것을 목표로 합니다.</p>
+        </div>
+      </div>
+      <div style="max-width:1560px; margin:clamp(72px,13vh,170px) auto 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:clamp(40px,6vw,120px);">
+        <div data-reveal="1" style="display:flex; flex-direction:column; gap:20px; border-top:1px solid rgba(17,17,17,0.14); padding-top:28px;">
+          <span style="font-size:11px; letter-spacing:0.24em; color:#666666;">MISSION</span>
+          <span style="font-size:clamp(24px,2.8vw,42px); line-height:1.1; letter-spacing:-0.02em; font-weight:600;">CREATE BETTER PRODUCTS.<br />BUILD LASTING BRANDS.</span>
+        </div>
+        <div data-reveal="1" style="display:flex; flex-direction:column; gap:20px; border-top:1px solid rgba(17,17,17,0.14); padding-top:28px;">
+          <span style="font-size:11px; letter-spacing:0.24em; color:#666666;">VISION</span>
+          <span style="font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:clamp(16px,1.35vw,19px); line-height:1.9; color:#111111; max-width:520px;">다양한 라이프스타일 카테고리에서 글로벌 경쟁력을 가진 소비재 브랜드를 만들어가는 Consumer Brand Company가 되는 것.</span>
+          <a href="#about" onClick="{{ goAbout }}" style="font-size:12px; letter-spacing:0.18em; font-weight:600; border-bottom:1px solid #111; padding-bottom:8px; align-self:flex-start; margin-top:12px;">MORE ABOUT HFNG →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12);">
+      <div style="max-width:1560px; margin:0 auto; padding:clamp(64px,11vh,140px) clamp(20px,4vw,64px); display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap;">
+        <h2 style="margin:0; font-size:clamp(30px,4vw,64px); letter-spacing:-0.025em; font-weight:600;">OUR BRANDS</h2>
+        <span style="font-size:11px; letter-spacing:0.22em; color:#666666;">03 BRANDS IN OPERATION</span>
+      </div>
+      <sc-for list="{{ brands }}" as="brand" hint-placeholder-count="3">
+        <div style="background:{{ brand.sectionBg }}; color:{{ brand.sectionInk }};">
+          <div style="height:clamp(360px,64vh,780px); background:{{ brand.visualBg }}; padding:clamp(24px,3.4vw,56px); display:flex; flex-direction:column; justify-content:space-between;">
+            <div style="display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:11px; letter-spacing:0.24em; color:{{ brand.meta }};">
+              <span>{{ brand.imageLabel }}</span>
+              <span>{{ brand.index }} / 03</span>
+            </div>
+            <div style="font-size:clamp(26px,4.4vw,78px); font-weight:600; line-height:1.02; letter-spacing:-0.02em;">{{ brand.shortCopy1 }}<br />{{ brand.shortCopy2 }}</div>
+          </div>
+          <div style="padding:clamp(40px,7vh,96px) clamp(20px,4vw,64px) clamp(56px,10vh,140px);">
+            <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); gap:clamp(32px,5vw,100px); align-items:end;">
+              <div data-reveal="1">
+                <h3 style="margin:0 0 18px; font-size:clamp(46px,8.4vw,150px); line-height:0.9; letter-spacing:-0.04em; font-weight:600;">{{ brand.name }}</h3>
+                <div style="font-size:13px; letter-spacing:0.12em; color:{{ brand.meta }};">{{ brand.category }}</div>
+              </div>
+              <div data-reveal="1" style="display:flex; flex-direction:column; gap:30px; max-width:560px;">
+                <p style="margin:0; font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:clamp(15px,1.2vw,17px); line-height:1.95;">{{ brand.summary }}</p>
+                <div style="font-size:11px; letter-spacing:0.18em; color:{{ brand.meta }}; line-height:1.9;">{{ brand.mood }}</div>
+                <a href="#brand" onClick="{{ brand.open }}" style="color:{{ brand.sectionInk }}; font-size:12px; letter-spacing:0.18em; font-weight:600; border-bottom:1px solid {{ brand.sectionInk }}; padding-bottom:8px; align-self:flex-start;">{{ brand.cta }} →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section id="business" style="padding:clamp(88px,18vh,220px) clamp(20px,4vw,64px) clamp(72px,14vh,180px);">
+      <div style="max-width:1560px; margin:0 auto;">
+        <div data-reveal="1" style="font-size:11px; letter-spacing:0.28em; color:#666666; margin-bottom:clamp(36px,6vh,72px);">HOW WE BUILD BRANDS</div>
+        <h2 data-reveal="1" style="margin:0 0 clamp(64px,12vh,150px); font-size:clamp(34px,6.2vw,110px); line-height:0.98; letter-spacing:-0.035em; font-weight:600;">FROM IDEA<br />TO BRAND.</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); column-gap:clamp(32px,4vw,80px);">
+          <sc-for list="{{ process }}" as="step" hint-placeholder-count="6">
+            <div data-reveal="1" style="border-top:1px solid rgba(17,17,17,0.15); padding:clamp(26px,3vh,36px) 0 clamp(48px,7vh,80px); display:flex; flex-direction:column; gap:18px;">
+              <span style="font-size:11px; letter-spacing:0.2em; color:#666666;">{{ step.num }}</span>
+              <span style="font-size:clamp(22px,2.2vw,34px); font-weight:600; letter-spacing:-0.015em;">{{ step.title }}</span>
+              <span style="font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:15px; line-height:1.9; color:#666666; max-width:340px;">{{ step.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(88px,18vh,220px) clamp(20px,4vw,64px) clamp(72px,14vh,180px);">
+      <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(48px,7vw,140px);">
+        <h2 data-reveal="1" style="margin:0; font-size:clamp(34px,5.4vw,92px); line-height:0.98; letter-spacing:-0.035em; font-weight:600;">WHAT<br />WE DO</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); background:#F5F4F0; border-top:1px solid rgba(17,17,17,0.15);">
+          <sc-for list="{{ areas }}" as="area" hint-placeholder-count="6">
+            <div data-reveal="1" style="background:#F5F4F0; padding:clamp(26px,3vh,34px) 24px clamp(40px,6vh,64px) 0; display:flex; flex-direction:column; gap:14px; border-bottom:1px solid rgba(17,17,17,0.15);">
+              <span style="font-size:11px; letter-spacing:0.2em; color:#666666;">{{ area.num }}</span>
+              <span style="font-size:clamp(18px,1.7vw,26px); font-weight:500; letter-spacing:-0.005em; line-height:1.3;">{{ area.title }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:clamp(72px,12vh,160px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto; width:100%;">
+        <p data-reveal="1" style="margin:0; font-size:clamp(38px,8.2vw,150px); line-height:0.94; letter-spacing:-0.04em; font-weight:600; color:#111111;">WE DON'T JUST<br />SELL PRODUCTS.</p>
+        <p data-reveal="1" style="margin:clamp(28px,5vh,72px) 0 0; font-size:clamp(38px,8.2vw,150px); line-height:0.94; letter-spacing:-0.04em; font-weight:600; color:#666666;">WE BUILD<br />BRANDS PEOPLE<br />CHOOSE AGAIN.</p>
+        <p data-reveal="1" style="margin:clamp(48px,8vh,110px) 0 0; font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:17px; line-height:1.9; color:#666666; max-width:440px;">좋은 제품에서 시작해,<br />오랫동안 선택받는 브랜드를 만듭니다.</p>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(64px,14vh,170px) clamp(20px,4vw,64px) clamp(56px,9vh,120px); max-width:1560px; margin:0 auto;">
+      <div style="font-size:11px; letter-spacing:0.28em; color:#666666; margin-bottom:clamp(36px,7vh,72px);">ABOUT HFNG</div>
+      <h1 style="margin:0; font-size:clamp(40px,8vw,140px); line-height:0.94; letter-spacing:-0.035em; font-weight:600;">WE BUILD BRANDS<br />FOR BETTER LIVING.</h1>
+    </section>
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(64px,10vh,140px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); gap:clamp(40px,6vw,120px);">
+        <h2 data-reveal="1" style="margin:0; font-size:clamp(26px,3vw,46px); line-height:1.1; letter-spacing:-0.02em; font-weight:600;">PHILOSOPHY</h2>
+        <div data-reveal="1" style="font-family:'Noto Sans KR',sans-serif; font-weight:300; display:flex; flex-direction:column; gap:28px; max-width:580px;">
+          <p style="margin:0; font-size:19px; line-height:1.9; color:#111111;">제품은 쉽게 만들어질 수 있지만 브랜드는 소비자의 선택이 쌓여 만들어진다.</p>
+          <p style="margin:0; font-size:17px; line-height:1.95; color:#666666;">HFNG는 단기적인 트렌드보다 지속적으로 선택받을 수 있는 제품과 브랜드를 만드는 것을 목표로 한다.</p>
+          <p style="margin:0; font-size:17px; line-height:1.95; color:#666666;">시장 조사, 제품 개발, 제조, 브랜드 디자인, 마케팅, 유통을 하나의 과정으로 연결한다.</p>
+        </div>
+      </div>
+    </section>
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(64px,10vh,140px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:clamp(40px,5vw,96px);">
+        <div data-reveal="1" style="display:flex; flex-direction:column; gap:22px;">
+          <span style="font-size:11px; letter-spacing:0.24em; color:#666666;">MISSION</span>
+          <span style="font-size:clamp(26px,3.2vw,46px); line-height:1.08; letter-spacing:-0.02em; font-weight:600;">CREATE BETTER PRODUCTS.<br />BUILD LASTING BRANDS.</span>
+        </div>
+        <div data-reveal="1" style="display:flex; flex-direction:column; gap:22px;">
+          <span style="font-size:11px; letter-spacing:0.24em; color:#666666;">VISION</span>
+          <span style="font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:18px; line-height:1.9; color:#111111; max-width:520px;">다양한 라이프스타일 카테고리에서 글로벌 경쟁력을 가진 소비재 브랜드를 만들어가는 Consumer Brand Company가 되는 것.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isBrands }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(64px,14vh,170px) clamp(20px,4vw,64px) clamp(48px,7vh,96px); max-width:1560px; margin:0 auto;">
+      <div style="font-size:11px; letter-spacing:0.28em; color:#666666; margin-bottom:clamp(36px,7vh,72px);">HFNG BRAND PORTFOLIO</div>
+      <h1 style="margin:0; font-size:clamp(48px,10vw,180px); line-height:0.92; letter-spacing:-0.04em; font-weight:600;">OUR BRANDS</h1>
+    </section>
+    <sc-for list="{{ brands }}" as="brand" hint-placeholder-count="3">
+      <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(48px,8vh,110px) clamp(20px,4vw,64px);">
+        <div data-reveal="1" style="max-width:1560px; margin:0 auto;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:16px; margin-bottom:clamp(28px,4vh,56px);">
+            <h2 style="margin:0; font-size:clamp(44px,8vw,140px); line-height:0.94; letter-spacing:-0.035em; font-weight:600;">{{ brand.name }}</h2>
+            <span style="font-size:12px; letter-spacing:0.14em; color:#666666;">{{ brand.category }}</span>
+          </div>
+          <div style="background:{{ brand.blockBg }}; color:{{ brand.blockInk }}; min-height:clamp(300px,52vh,620px); padding:clamp(28px,3vw,52px); display:flex; flex-direction:column; justify-content:space-between;">
+            <span style="font-size:11px; letter-spacing:0.24em; opacity:0.6;">{{ brand.imageLabel }}</span>
+            <span style="font-size:clamp(26px,4vw,64px); font-weight:600; line-height:1.05; letter-spacing:0.01em;">{{ brand.shortCopy1 }}<br />{{ brand.shortCopy2 }}</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:clamp(32px,5vw,90px); margin-top:clamp(32px,5vh,64px); align-items:end;">
+            <p style="margin:0; font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:16px; line-height:1.9; color:#111111; max-width:560px;">{{ brand.summary }}</p>
+            <a href="#brand" onClick="{{ brand.open }}" style="font-size:12px; letter-spacing:0.18em; font-weight:600; border-bottom:1px solid #111; padding-bottom:8px; justify-self:start;">{{ brand.cta }} →</a>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <section style="padding:clamp(56px,10vh,130px) clamp(20px,4vw,64px) clamp(40px,6vh,80px); max-width:1560px; margin:0 auto;">
+      <a href="#brands" onClick="{{ goBrands }}" style="font-size:11px; letter-spacing:0.2em; color:#666666;">← ALL BRANDS</a>
+      <div style="margin-top:clamp(36px,7vh,80px); display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:16px;">
+        <h1 style="margin:0; font-size:clamp(48px,11vw,190px); line-height:0.9; letter-spacing:-0.04em; font-weight:600;">{{ active.name }}</h1>
+        <span style="font-size:12px; letter-spacing:0.14em; color:#666666;">{{ active.category }}</span>
+      </div>
+      <div style="margin-top:clamp(32px,5vh,64px); background:{{ active.blockBg }}; color:{{ active.blockInk }}; min-height:clamp(320px,60vh,700px); padding:clamp(28px,3vw,56px); display:flex; flex-direction:column; justify-content:space-between;">
+        <span style="font-size:11px; letter-spacing:0.24em; opacity:0.6;">{{ active.imageLabel }}</span>
+        <span style="font-size:clamp(28px,4.6vw,76px); font-weight:600; line-height:1.03; letter-spacing:0.01em;">{{ active.shortCopy1 }}<br />{{ active.shortCopy2 }}</span>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(56px,9vh,130px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:clamp(40px,6vw,110px);">
+        <h2 data-reveal="1" style="margin:0; font-size:clamp(26px,3vw,46px); line-height:1.1; letter-spacing:-0.02em; font-weight:600;">BRAND<br />PHILOSOPHY</h2>
+        <div data-reveal="1" style="font-family:'Noto Sans KR',sans-serif; font-weight:300; display:flex; flex-direction:column; gap:26px; max-width:580px;">
+          <p style="margin:0; font-size:18px; line-height:1.9; color:#111111;">{{ active.summary }}</p>
+          <p style="margin:0; font-size:16px; line-height:1.95; color:#666666;">{{ active.philosophy }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(56px,9vh,130px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:16px; margin-bottom:clamp(36px,5vh,64px);">
+          <h2 data-reveal="1" style="margin:0; font-size:clamp(26px,3vw,46px); letter-spacing:-0.02em; font-weight:600;">PRODUCT DEVELOPMENT</h2>
+          <span style="font-size:11px; letter-spacing:0.22em; color:#666666;">CURRENTLY IN DEVELOPMENT</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); background:#F5F4F0; border-top:1px solid rgba(17,17,17,0.15);">
+          <sc-for list="{{ active.products }}" as="p" hint-placeholder-count="2">
+            <div data-reveal="1" style="background:#F5F4F0; padding:clamp(24px,2.4vw,40px) clamp(24px,2.4vw,40px) clamp(32px,3vw,48px) 0; display:flex; flex-direction:column; gap:14px; min-height:200px; border-bottom:1px solid rgba(17,17,17,0.15);">
+              <span style="font-size:10px; letter-spacing:0.22em; color:#666666;">{{ p.status }}</span>
+              <span style="font-size:clamp(20px,2vw,28px); font-weight:600; letter-spacing:-0.01em;">{{ p.name }}</span>
+              <span style="font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:14px; line-height:1.85; color:#666666;">{{ p.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(56px,9vh,130px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:clamp(40px,6vw,110px);">
+        <h2 data-reveal="1" style="margin:0; font-size:clamp(26px,3vw,46px); line-height:1.1; letter-spacing:-0.02em; font-weight:600;">BRAND<br />DIRECTION</h2>
+        <div data-reveal="1" style="display:flex; flex-direction:column; gap:36px;">
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <span style="font-size:11px; letter-spacing:0.22em; color:#666666;">KEYWORDS</span>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <sc-for list="{{ active.keywords }}" as="kw" hint-placeholder-count="5">
+                <span style="border:1px solid rgba(17,17,17,0.2); padding:8px 15px; font-size:11px; letter-spacing:0.14em; color:#111111;">{{ kw }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <span style="font-size:11px; letter-spacing:0.22em; color:#666666;">VISUAL DIRECTION</span>
+            <div style="display:flex; flex-wrap:wrap; gap:24px;">
+              <sc-for list="{{ active.swatches }}" as="s" hint-placeholder-count="4">
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                  <span style="width:84px; height:84px; background:{{ s.hex }}; border:1px solid rgba(17,17,17,0.12); display:block;"></span>
+                  <span style="font-size:10px; letter-spacing:0.14em; color:#666666;">{{ s.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid rgba(17,17,17,0.12); padding:clamp(72px,12vh,170px) clamp(20px,4vw,64px);">
+      <div style="max-width:1560px; margin:0 auto; display:flex; flex-direction:column; gap:28px; align-items:flex-start;">
+        <span style="font-size:11px; letter-spacing:0.24em; color:#666666;">COMING SOON</span>
+        <p style="margin:0; font-size:clamp(30px,5vw,88px); line-height:1.0; letter-spacing:-0.03em; font-weight:600;">{{ active.name }} IS<br />CURRENTLY IN DEVELOPMENT.</p>
+        <a href="#contact" onClick="{{ goContact }}" style="font-size:12px; letter-spacing:0.18em; font-weight:600; border-bottom:1px solid #111; padding-bottom:8px;">PARTNERSHIP INQUIRY →</a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <section id="contact" style="background:#111111; color:#F5F4F0; min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:clamp(64px,13vh,170px) clamp(20px,4vw,64px) clamp(48px,8vh,100px);">
+    <div style="max-width:1560px; margin:0 auto; width:100%; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; font-size:11px; letter-spacing:0.28em; color:rgba(245,244,240,0.5);">
+      <span>CONTACT / PARTNERSHIP</span>
+      <span>HFNG</span>
+    </div>
+    <div style="max-width:1560px; margin:clamp(48px,8vh,110px) auto; width:100%;">
+      <h2 style="margin:0; font-size:clamp(40px,8.2vw,150px); line-height:0.92; letter-spacing:-0.04em; font-weight:600;">LET'S BUILD<br />SOMETHING<br />VALUABLE.</h2>
+    </div>
+    <div style="max-width:1560px; margin:0 auto; width:100%; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(36px,5vw,100px); border-top:1px solid rgba(245,244,240,0.2); padding-top:clamp(28px,4vh,48px); align-items:start;">
+      <p style="margin:0; font-family:'Noto Sans KR',sans-serif; font-weight:300; font-size:16px; line-height:1.95; color:rgba(245,244,240,0.72); max-width:420px;">HFNG는 제조, 원료, 패키지, 유통 및 다양한 비즈니스 파트너와의 협업을 열어두고 있습니다.</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-size:10px; letter-spacing:0.24em; color:rgba(245,244,240,0.45); margin-bottom:8px;">AREAS</span>
+        <span style="font-size:15px; letter-spacing:0.04em;">Business Partnership</span>
+        <span style="font-size:15px; letter-spacing:0.04em;">Manufacturing</span>
+        <span style="font-size:15px; letter-spacing:0.04em;">Distribution</span>
+        <span style="font-size:15px; letter-spacing:0.04em;">Product Development</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <span style="font-size:10px; letter-spacing:0.24em; color:rgba(245,244,240,0.45);">CONTACT HFNG</span>
+        <a href="mailto:contact@hfng.co.kr" style="color:#F5F4F0; font-size:clamp(20px,2.4vw,34px); letter-spacing:-0.015em; border-bottom:1px solid rgba(245,244,240,0.4); padding-bottom:12px; align-self:flex-start;" style-hover="color:rgba(245,244,240,0.6)">contact@hfng.co.kr</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#111111; color:#F5F4F0; border-top:1px solid rgba(245,244,240,0.14); padding:clamp(48px,7vh,88px) clamp(20px,4vw,64px) 40px;">
+    <div style="max-width:1560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:44px;">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <span style="font-size:22px; font-weight:700; letter-spacing:0.18em;">HFNG</span>
+        <span style="font-size:13px; color:rgba(245,244,240,0.6); letter-spacing:0.02em;">Building Brands for Better Living.</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-size:10px; letter-spacing:0.24em; color:rgba(245,244,240,0.45); margin-bottom:6px;">NAVIGATION</span>
+        <a href="#about" onClick="{{ goAbout }}" style="color:rgba(245,244,240,0.85); font-size:13px;">About</a>
+        <a href="#brands" onClick="{{ goBrands }}" style="color:rgba(245,244,240,0.85); font-size:13px;">Brands</a>
+        <a href="#business" onClick="{{ goBusiness }}" style="color:rgba(245,244,240,0.85); font-size:13px;">Business</a>
+        <a href="#contact" onClick="{{ goContact }}" style="color:rgba(245,244,240,0.85); font-size:13px;">Contact</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-size:10px; letter-spacing:0.24em; color:rgba(245,244,240,0.45); margin-bottom:6px;">BRANDS</span>
+        <sc-for list="{{ brands }}" as="brand" hint-placeholder-count="3">
+          <a href="#brand" onClick="{{ brand.open }}" style="color:rgba(245,244,240,0.85); font-size:13px; letter-spacing:0.08em;">{{ brand.name }}</a>
+        </sc-for>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; justify-content:flex-end;">
+        <a href="mailto:contact@hfng.co.kr" style="color:rgba(245,244,240,0.85); font-size:13px;">contact@hfng.co.kr</a>
+        <span style="font-size:12px; color:rgba(245,244,240,0.45);">© HFNG. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const BRANDS = [
+  {
+    id: "reverman", index: "01", name: "REVERMAN",
+    category: "Men's Grooming & Lifestyle",
+    summary: "REVERMAN은 성숙한 남성을 위한 프리미엄 그루밍 브랜드다. 40~60대 남성을 주요 고객으로 하며, 향과 기능, 사용 경험을 결합한 남성 바디케어 제품을 개발한다. 첫 번째 핵심 카테고리는 프리미엄 바디워시다.",
+    philosophy: "매일 반복되는 씻는 행위를 하나의 의식으로 바꾼다. 향, 질감, 잔향까지 설계해 남성의 하루를 정돈하는 경험을 만든다.",
+    shortCopy1: "GROOMING FOR", shortCopy2: "THE MODERN GENTLEMAN.",
+    keywords: ["MASCULINE", "SOPHISTICATED", "MATURE", "SCENT", "CONFIDENCE"],
+    cta: "DISCOVER REVERMAN",
+    imageLabel: "BRAND IMAGE — REVERMAN",
+    blockBg: "#181614", blockInk: "#EDE9E3",
+    sectionBg: "#141210", sectionInk: "#EFEBE4", visualBg: "#232019", meta: "rgba(239,235,228,0.55)", rule: "rgba(239,235,228,0.18)",
+    mood: "DARK · CHARCOAL · DEEP BROWN · FRAGRANCE",
+    products: [
+      { status: "IN DEVELOPMENT", name: "Premium Body Wash", body: "향과 세정력, 사용감을 함께 설계한 첫 번째 핵심 제품. 성숙한 남성 피부를 기준으로 처방을 개발 중이다." },
+      { status: "PLANNED", name: "Scent Line Extension", body: "바디워시를 시작으로 향을 중심으로 한 남성 바디케어 라인으로 확장을 검토하고 있다." }
+    ],
+    swatches: [
+      { hex: "#111111", label: "BLACK" }, { hex: "#2E2B28", label: "CHARCOAL" },
+      { hex: "#4A3B2E", label: "DEEP BROWN" }, { hex: "#9A9490", label: "METAL" }
+    ]
+  },
+  {
+    id: "ollija", index: "02", name: "OLLIJA",
+    category: "Premium Olive Oil & Mediterranean Food",
+    summary: "OLLIJA는 좋은 올리브오일을 더 세련되고 편리한 방식으로 즐길 수 있도록 만드는 프리미엄 푸드 브랜드다. 첫 번째 제품은 프리미엄 Extra Virgin Olive Oil을 중심으로 개발한다.",
+    philosophy: "프리미엄 병 제품을 통해 브랜드 이미지를 먼저 구축하고, 이후 소비자의 사용 편의를 높이는 다양한 포맷으로 확장한다.",
+    shortCopy1: "BETTER OIL.", shortCopy2: "BETTER EVERYDAY FOOD.",
+    keywords: ["MEDITERRANEAN", "FRESH", "PREMIUM", "HEALTHY", "SIMPLE", "MODERN KITCHEN"],
+    cta: "DISCOVER OLLIJA",
+    imageLabel: "BRAND IMAGE — OLLIJA",
+    blockBg: "#5B6437", blockInk: "#F4F2EA",
+    sectionBg: "#E9E3D4", sectionInk: "#1A1A14", visualBg: "#DBD3BD", meta: "#6B6653", rule: "rgba(26,26,20,0.16)",
+    mood: "MEDITERRANEAN SUNLIGHT · OLIVE · KITCHEN & DINING",
+    products: [
+      { status: "IN DEVELOPMENT", name: "Extra Virgin Olive Oil", body: "브랜드의 기준을 세우는 프리미엄 병 제품. 산지와 압착 방식, 패키지를 함께 개발 중이다." },
+      { status: "PLANNED", name: "Squeeze / Single Portion", body: "사용 편의를 높인 스퀴즈형과 1회분 포맷으로 일상 사용 빈도를 넓힌다." },
+      { status: "PLANNED", name: "Balsamic & Mediterranean Food", body: "발사믹과 지중해 식품 카테고리로 확장 가능성을 검토하고 있다." }
+    ],
+    swatches: [
+      { hex: "#F4F2EA", label: "WARM WHITE" }, { hex: "#5B6437", label: "OLIVE GREEN" },
+      { hex: "#111111", label: "BLACK" }, { hex: "#D9C9A3", label: "SUNLIGHT" }
+    ]
+  },
+  {
+    id: "baseon", index: "03", name: "BASEON",
+    category: "Nutrition & Everyday Wellness",
+    summary: "BASEON은 복잡한 건강정보 대신 일상 속에서 쉽게 실천할 수 있는 영양과 웰니스 제품을 개발하는 브랜드다.",
+    philosophy: "향후 다양한 Daily Nutrition 제품으로 확장할 예정이다. 과학적 근거와 실천 가능한 루틴을 함께 설계한다.",
+    shortCopy1: "BUILD YOUR", shortCopy2: "BETTER BASE.",
+    keywords: ["NUTRITION", "DAILY WELLNESS", "SIMPLE", "SCIENCE", "NATURE", "ROUTINE"],
+    cta: "DISCOVER BASEON",
+    imageLabel: "BRAND IMAGE — BASEON",
+    blockBg: "#1E3529", blockInk: "#EFEDE6",
+    sectionBg: "#1B3227", sectionInk: "#F0EEE6", visualBg: "#24402F", meta: "rgba(240,238,230,0.58)", rule: "rgba(240,238,230,0.18)",
+    mood: "CLEAN NUTRITION · NATURAL INGREDIENTS · MODERN WELLNESS",
+    products: [
+      { status: "IN DEVELOPMENT", name: "Paradise Grain", body: "Grains of Paradise 원료를 활용한 건강·웰니스 제품을 개발 중이다." },
+      { status: "IN DEVELOPMENT", name: "Salad Powder / Vegetable Nutrition", body: "채소와 식물성 원료를 보다 쉽고 편리하게 섭취할 수 있도록 하는 파우더형 제품을 개발 중이다." }
+    ],
+    swatches: [
+      { hex: "#EFEDE6", label: "OFF WHITE" }, { hex: "#1E3529", label: "DARK GREEN" },
+      { hex: "#8A9B6E", label: "NATURAL" }, { hex: "#111111", label: "BLACK" }
+    ]
+  }
+];
+
+const PROCESS = [
+  { num: "01", title: "DISCOVER", body: "시장과 소비자 변화를 분석하고 새로운 기회를 발견한다." },
+  { num: "02", title: "DEFINE", body: "제품과 브랜드의 명확한 포지셔닝을 만든다." },
+  { num: "03", title: "DEVELOP", body: "원료, 제조사, 용기, 패키지와 함께 실제 제품을 개발한다." },
+  { num: "04", title: "DESIGN", body: "브랜드 아이덴티티와 소비자 경험을 설계한다." },
+  { num: "05", title: "LAUNCH", body: "시장에 출시하고 판매 채널을 구축한다." },
+  { num: "06", title: "GROW", body: "데이터와 소비자 반응을 기반으로 브랜드와 제품을 확장한다." }
+];
+
+const AREAS = [
+  { num: "01", title: "Brand Strategy" },
+  { num: "02", title: "Product Development" },
+  { num: "03", title: "Manufacturing Partnership" },
+  { num: "04", title: "Brand Identity & Packaging" },
+  { num: "05", title: "Marketing & Commerce" },
+  { num: "06", title: "Brand Growth" }
+];
+
+class Component extends DCLogic {
+  state = { page: "home", brandId: "reverman", menuOpen: false };
+
+  componentDidMount() {
+    this.setupResponsive();
+    this.setupReveal();
+  }
+  componentDidUpdate() { this.setupReveal(); }
+
+  setupResponsive() {
+    const root = this.rootEl();
+    if (!root) return;
+    const apply = () => {
+      const wide = root.getBoundingClientRect().width >= 860;
+      const nav = root.querySelector('[data-desktop-nav]');
+      const btn = root.querySelector('[data-mobile-toggle]');
+      if (nav) nav.style.display = wide ? 'block' : 'none';
+      if (btn) btn.style.display = wide ? 'none' : 'flex';
+      if (wide && this.state.menuOpen) this.setState({ menuOpen: false });
+    };
+    apply();
+    this._ro = new ResizeObserver(apply);
+    this._ro.observe(root);
+  }
+
+  rootEl() {
+    const el = (this._probe && this._probe.parentNode) || document.querySelector('x-dc');
+    return el || document.body;
+  }
+
+  setupReveal() {
+    const nodes = document.querySelectorAll('[data-reveal]:not([data-reveal-done])');
+    if (!nodes.length) return;
+    if (!this._io) {
+      const show = (el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        this._io.unobserve(el);
+      };
+      this._show = show;
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting || e.boundingClientRect.top < 0) show(e.target);
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
+    }
+    if (!this._sweep) {
+      this._sweep = () => {
+        document.querySelectorAll('[data-reveal][data-reveal-done]').forEach((n) => {
+          if (n.style.opacity === '1') return;
+          const r = n.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) this._show(n);
+          else if (r.top < 0) this._show(n);
+        });
+      };
+      this._onScroll = () => {
+        clearTimeout(this._sweepT);
+        this._sweepT = setTimeout(this._sweep, 120);
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+    }
+    nodes.forEach((n) => {
+      n.setAttribute('data-reveal-done', '1');
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(18px)';
+      n.style.transition = 'opacity 900ms cubic-bezier(.22,.61,.36,1), transform 900ms cubic-bezier(.22,.61,.36,1)';
+      this._io.observe(n);
+    });
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._ro) this._ro.disconnect();
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+
+  nav(page, e, brandId) {
+    if (e) e.preventDefault();
+    this.setState({ page, menuOpen: false, brandId: brandId || this.state.brandId });
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  scrollToContact(e) {
+    if (e) e.preventDefault();
+    this.setState({ menuOpen: false });
+    const el = document.getElementById('contact');
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+  }
+
+  scrollToBusiness(e) {
+    if (e) e.preventDefault();
+    if (this.state.page !== 'home') { this.nav('home', e); setTimeout(() => this.scrollToBusiness(), 60); return; }
+    this.setState({ menuOpen: false });
+    const el = document.getElementById('business');
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+  }
+
+  renderVals() {
+    const brands = BRANDS.map((b) => Object.assign({}, b, {
+      open: (e) => this.nav('detail', e, b.id)
+    }));
+    const active = brands.find((b) => b.id === this.state.brandId) || brands[0];
+    return {
+      brands, process: PROCESS, areas: AREAS, active,
+      menuOpen: this.state.menuOpen,
+      isHome: this.state.page === 'home',
+      isAbout: this.state.page === 'about',
+      isBrands: this.state.page === 'brands',
+      isDetail: this.state.page === 'detail',
+      goHome: (e) => this.nav('home', e),
+      goAbout: (e) => this.nav('about', e),
+      goBrands: (e) => this.nav('brands', e),
+      goBusiness: (e) => this.scrollToBusiness(e),
+      goContact: (e) => this.scrollToContact(e),
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>
